@@ -4,7 +4,6 @@ import java.util.Random;
 
 /**
 * Class storing and managing the torpedoes of a ship
-*
 * (Deliberately contains bugs.)
 */
 public class TorpedoStore {
@@ -12,7 +11,7 @@ public class TorpedoStore {
   // rate of failing to fire torpedos [0.0, 1.0]
   private double FAILURE_RATE = 0.0; //NOSONAR
 
-  private int torpedoCount = 0;
+  private int torpedoCount;
 
   public TorpedoStore(int numberOfTorpedos){
     this.torpedoCount = numberOfTorpedos;
@@ -30,7 +29,7 @@ public class TorpedoStore {
 
   public boolean fire(int numberOfTorpedos){
     if(numberOfTorpedos < 1 || numberOfTorpedos > this.torpedoCount){
-      new IllegalArgumentException("numberOfTorpedos");
+        throw new IllegalArgumentException("numberOfTorpedos");
     }
 
     boolean success = false;
@@ -43,19 +42,12 @@ public class TorpedoStore {
       // successful firing
       this.torpedoCount =- numberOfTorpedos;
       success = true;
-    } else {
-      // simulated failure
-      success = false;
     }
 
     return success;
   }
 
   public boolean isEmpty(){
-    return this.torpedoCount <= 0;
-  }
-
-  public int getTorpedoCount() {
-    return this.torpedoCount;
+    return this.torpedoCount > 0;
   }
 }
