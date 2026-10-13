@@ -1,5 +1,5 @@
 # Badges
-![](https://raw.githubusercontent.com/ftsrg/theta/badges/badges/build-Linux/badge.svg)
+[![Java CI with Maven](https://github.com/Cody212501/se-lab/actions/workflows/maven.yml/badge.svg?branch=main)](https://github.com/Cody212501/se-lab/actions/workflows/maven.yml)
 
 [![License:MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
